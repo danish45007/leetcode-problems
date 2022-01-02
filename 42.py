@@ -3,14 +3,14 @@ def trap(heights):
     max_left = [heights[0]]
     max_right = []
     max_right.insert(len(heights),heights[len(heights)-1])
-    min_curr = [] #min(max_left,max_right) - heights[i]
+    min_curr = 0 #min(max_left,max_right) - heights[i]
     
     for i in range(len(heights)-1):
         max_left.append(max(heights[0:i+1]))
         max_right.append(max(heights[i+1:len(heights)]))
         if (min(max_left[i],max_right[i])-heights[i] >= 0):
-            min_curr.append(min(max_left[i],max_right[i])-heights[i])
-    return sum(min_curr)
+            min_curr += min(max_left[i],max_right[i])-heights[i]
+    return min_curr
 
 if __name__ == '__main__':
     print(trap([
