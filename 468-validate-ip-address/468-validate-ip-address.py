@@ -18,11 +18,7 @@ class Solution:
     def is_valid_IPV6(self,bits: str) -> bool:
         validAlphArea = ["a","A","b","B","c","C","d","D","e","E","f","F","1","2","3","4","5","6","7","8","9","0","-"]
         try:
-            if(1 <= len(bits) <= 4):
-                if(all(bit in validAlphArea  for bit in bits)):
-                    return True
-            else:
-                return False
+            return ((1 <= len(bits) <= 4) and (all(bit in validAlphArea  for bit in bits)))
         except:
             return False
             
