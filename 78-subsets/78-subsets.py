@@ -5,7 +5,7 @@ class Solution:
     def solve(self,nums,target,result):
         if len(nums)==0:
             result.append(target)
-            return result
+            return
         op1 = target.copy()
         op2 = target.copy() 
         op2.append(nums[0])
