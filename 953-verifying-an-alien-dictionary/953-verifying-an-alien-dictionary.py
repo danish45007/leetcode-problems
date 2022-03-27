@@ -11,8 +11,7 @@ class Solution:
         return True
     
     def check_two_words_in_order(self,word1,word2):
-        if (len(word1) > len(word2) and word1.find(word2) == 0):
-            print(word1.find(word2))
+        if (len(word1) > len(word2) and word1.find(word2) != -1):
             return False
         
         for i in range(min(len(word1),len(word2))):
