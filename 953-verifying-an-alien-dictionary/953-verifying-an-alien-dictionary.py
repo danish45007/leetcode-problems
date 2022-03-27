@@ -11,12 +11,9 @@ class Solution:
         return True
     
     def check_two_words_in_order(self,word1,word2):
-        if (len(word1) > len(word2) and word1.find(word2) != -1):
-            return False
-        
+        if (len(word1) > len(word2) and word1.find(word2) != -1): return False
         for i in range(min(len(word1),len(word2))):
             if(word1[i] != word2[i]):
-                print(self.char_order[word1[i]],self.char_order[word2[i]])
                 if(self.char_order[word1[i]] > self.char_order[word2[i]]): return False
                 if(self.char_order[word1[i]] < self.char_order[word2[i]]): return True
         return True
