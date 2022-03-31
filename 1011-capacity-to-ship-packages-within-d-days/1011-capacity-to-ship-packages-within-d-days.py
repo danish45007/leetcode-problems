@@ -7,9 +7,7 @@ class Solution:
         res = -1        
         while start <= end:
             mid = start + (end-start) // 2
-            print(self.isValid(weights,mid,days))
             if(self.isValid(weights,mid,days)):
-                print(mid)
                 res = mid
                 end = mid - 1
             else:
