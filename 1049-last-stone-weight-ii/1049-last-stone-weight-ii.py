@@ -17,12 +17,12 @@ class Solution:
                 else:
                     dp[i][j] = dp[i-1][j]
         lst_row = dp[n]
-        lst_row_half_size = math.floor((len(lst_row)-1) / 2)
+        lst_row_half_size = math.floor((len(lst_row)) / 2)
         for i in range(lst_row_half_size+1):
             if(lst_row[i]):
                 search_area.append(i)
         for i in range(len(search_area)):
-            _min = min(_min,_sum-2*search_area[i])
+            _min = min(_min,abs(_sum-2*search_area[i]))
         return _min
                     
             
