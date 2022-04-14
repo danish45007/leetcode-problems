@@ -5,9 +5,10 @@ class Solution:
         if s[0] != '0': 
             dp[1] = 1
         for i in range(2, len(s)+1):
-            if int(s[i-1]) >= 1 and int(s[i-1]) <= 9:
+            if 9 >= int(s[i-1]) >= 1:
                 dp[i] += dp[i-1]
             second = int(s[i-2:i])
-            if second >= 10 and second <= 26:
+            if 26 >= second >= 10:
                 dp[i] += dp[i-2]
+        print(dp)
         return dp[-1]
