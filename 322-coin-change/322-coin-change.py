@@ -2,13 +2,13 @@ class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
         dp = [[0 for i in range(amount+1)] for j in range(len(coins)+1)]
         for j in range(amount+1):
-            dp[0][j] = float('inf') - 1
+            dp[0][j] = float('inf')
         for i in range(1,len(coins)+1):
             dp[i][0] = 0
         
         for i in range(1,amount+1):
             if(i%coins[0] != 0):
-                dp[1][i] = float('inf')-1
+                dp[1][i] = float('inf')
             else:
                 dp[1][i] = i / coins[0]
         
