@@ -1,14 +1,17 @@
 class Solution:
     def numDecodings(self, s: str) -> int:
-        dp = [0] * (len(s)+1)
-        dp[0] = 1
-        if s[0] != '0': 
-            dp[1] = 1
-        for i in range(2, len(s)+1):
-            if 9 >= int(s[i-1]) >= 1:
-                dp[i] += dp[i-1]
-            second = int(s[i-2:i])
-            if 26 >= second >= 10:
-                dp[i] += dp[i-2]
-        print(dp)
-        return dp[-1]
+        if len(s) == 0 or s[0] == '0':
+            return 0
+        if len(s) == 1:return 1
+        prev_count,prev_prev_count = 1,1
+        for i in range(1,len(s)):
+            single_digit = int(s[i])
+            double_digit = int(s[i-1:i+1])
+            curr_count = 0
+            if (single_digit > 0):curr_count += prev_count
+            if (double_digit >= 10 and double_digit <= 26):curr_count += prev_prev_count
+            prev_prev_count = prev_count
+            prev_count = curr_count
+        return prev_count
+                
+            
