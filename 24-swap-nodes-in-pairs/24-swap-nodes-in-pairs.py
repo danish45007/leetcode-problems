@@ -19,6 +19,7 @@ class Solution:
             second.next = curr
             prev.next = second
             curr.next = next_pair
+            # update pointers
             prev = curr
             curr = next_pair
         return dummy_node.next
