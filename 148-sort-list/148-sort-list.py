@@ -13,6 +13,7 @@ class Solution:
         left = head
         # middle node
         right = self.get_mid(head)
+        print(right.val)
         # break the pointer b/w left and right
         temp = right.next
         right.next = None
@@ -22,6 +23,7 @@ class Solution:
         return self.merge_sorted_list(l,r)
     
     def get_mid(self,head):
+        # fast starting from hed.next coz we want to end prev to mid
         slow,fast = head,head.next
         while fast and fast.next:
             slow = slow.next
