@@ -5,15 +5,27 @@
 #         self.next = next
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
-        # array apporach drawback requires extra O(n) memory
-        nums = []
-        while head:
-            nums.append(head.val)
-            head = head.next
-        l,r = 0,len(nums)-1
-        while l < r:
-            if nums[l] != nums[r]:
+        # approach 2 using the slow,fast pointer 
+        #get the middle node
+        slow,fast = head,head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        # slow is pointing to the middle node
+        # reverse the links of the second half of the linked list of direct comparision
+        prev = None
+        while slow:
+            nxt = slow.next
+            slow.next = prev
+            prev = slow
+            slow = nxt
+        # start comparing the value from the start and end
+        start,end = head,prev
+        while end:
+            if start.val != end.val:
                 return False
-            l += 1
-            r -= 1
+            start = start.next
+            end = end.next
         return True
+            
+            
