@@ -8,7 +8,7 @@ class Solution:
         dummy_node = ListNode(0,head)
         slow_pointer = dummy_node
         fast_pointer = head
-        while n > 0 and fast_pointer:
+        while n > 0:
             fast_pointer = fast_pointer.next
             n -=1
         while fast_pointer:
