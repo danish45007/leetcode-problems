@@ -1,16 +1,17 @@
 class Solution:
-    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:# sort array,this way we can safely ignore repeating values
+    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+        # sort array,this way we can safely ignore repeating values
         # because after sort,same values come one after one
         nums.sort()
         result = []
 		
-        for i in range(len(nums) - 3):
+        for i in range(len(nums)):
 			# if repeating value,ignore the value
             if i > 0 and nums[i] == nums[i - 1]:
                 continue
 
             # solve 3sum problem with nums[i]
-            for j in range(i + 1, len(nums) - 2):
+            for j in range(i + 1, len(nums)):
                 if j > i + 1 and nums[j] == nums[j - 1]:
                     continue
 
