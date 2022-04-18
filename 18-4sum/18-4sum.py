@@ -16,32 +16,23 @@ class Solution:
                     continue
 
                 # solve 2sum problem with nums[i]+nums[j]
-                p = j + 1
-                q = len(nums) - 1
-                while p < q:
+                l = j + 1
+                r = len(nums) - 1
+                while l < r:
                     # if total sum of 4 numbers equal to target,append to result list
-                    tot = nums[i] + nums[j] + nums[p] + nums[q]
+                    tot = nums[i] + nums[j] + nums[l] + nums[r]
                     if tot == target:
-                        result.append([nums[i], nums[j], nums[p], nums[q]])
-
-                        # move pointer-p forward and pointer-q backward to find another pair
-                        p += 1
-                        q -= 1
-                        # before calculate next round sum,we need to make sure that values are not repeated
-                        # we can do the check with previous value and current value and if they are equal
-                        # move pointer-p forward till find a different value
-                        # move pointer-q backward till find a different value
-                        while p < q and nums[p] == nums[p - 1]:
-                            p += 1
-                        while p < q and nums[q] == nums[q + 1]:
-                            q -= 1
+                        result.append([nums[i], nums[j], nums[l], nums[r]])
+                        l+=1
+                        while l < r and nums[l] == nums[l - 1]:
+                            l += 1
                     # if total is less than target value,we need a bigger total
                     # move p pointer forward to make bigger total
                     elif tot < target:
-                        p += 1
+                        l += 1
                     # if total is bigger than target value,we need a smaller total
                     # move q pointer backward to make small total
                     else:
-                        q -= 1
+                        r -= 1
 
         return result
