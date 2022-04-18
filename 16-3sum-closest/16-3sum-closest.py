@@ -4,8 +4,6 @@ class Solution:
         diff = float('inf')
         res = 0
         for i,num in enumerate(nums):
-            if i > 0 and num == nums[i-1]:
-                continue
             left,right = i+1,len(nums)-1
             while left < right:
                 three_sum = num + nums[left] + nums[right]
