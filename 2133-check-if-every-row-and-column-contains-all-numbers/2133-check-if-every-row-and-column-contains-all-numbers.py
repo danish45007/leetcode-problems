@@ -7,7 +7,7 @@ class Solution:
         cols = len(matrix[0])
         for r in range(rows):
             for c in range(cols):
-                if(
+                if(matrix[r][c] not in valid_set_of_numbers or
                    matrix[r][c] in row_visited[r] or 
                    matrix[r][c] in col_visited[c]):
                     return False
