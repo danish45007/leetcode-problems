@@ -5,6 +5,7 @@ class Solution:
         def back_track(open_count,close_count):
             if open_count == close_count == n:
                 response.append("".join(stack))
+                return
             
             if open_count < n:
                 stack.append("(")
@@ -14,6 +15,8 @@ class Solution:
                 stack.append(")")
                 back_track(open_count,close_count+1)
                 stack.pop()
+                
+            
         
         back_track(0,0)
         return response
