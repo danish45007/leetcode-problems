@@ -23,4 +23,4 @@ class Solution:
             dfs(i+1)
         dfs(0)
         # duplicate check
-        return list(set(tuple(sorted(r)) for r in result))
+        return result
