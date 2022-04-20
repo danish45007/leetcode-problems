@@ -22,4 +22,4 @@ class Solution:
             # call on the next input
             dfs(i+1)
         dfs(0)
-        return result
+        return list(set(tuple(sorted(r)) for r in result))
