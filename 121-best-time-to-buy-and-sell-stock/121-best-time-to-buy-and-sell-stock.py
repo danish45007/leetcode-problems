@@ -3,15 +3,15 @@ class Solution:
         max_profit = 0
         buy,sell = 0,1
         while sell < len(prices):
-            if prices[buy] < prices[sell]:
+            # potential selling prices that can generate profit
+            if(prices[sell] > prices[buy]):
                 profit = prices[sell] - prices[buy]
                 max_profit = max(max_profit,profit)
             else:
                 buy = sell
-            sell +=1
-        print(sell)
-        return max_profit
             
+            sell +=1
+        return max_profit
         
         
                 
