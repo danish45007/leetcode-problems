@@ -10,15 +10,15 @@ class Solution:
             return False
         if not subRoot:
             return True
-        if(self.isSameTree(root,subRoot)):
+        if(self.dfs_same_tree(root,subRoot)):
             return True
-        return (self.isSubtree(root.left,subRoot) or self.isSubtree(root.right,subRoot))
-    
-    def isSameTree(self,t1,t2):
+        return self.isSubtree(root.left,subRoot) or self.isSubtree(root.right,subRoot)
+        
+    def dfs_same_tree(self,t1,t2):
+
         if not t1 and not t2:
             return True
-        
         if t1 and t2 and t1.val == t2.val:
-            return (self.isSameTree(t1.left,t2.left) and self.isSameTree(t1.right,t2.right))
-    
+            return (self.dfs_same_tree(t1.left,t2.left) and self.dfs_same_tree(t1.right,t2.right))
         return False
+            
