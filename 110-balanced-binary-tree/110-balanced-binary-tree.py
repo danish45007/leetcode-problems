@@ -12,6 +12,8 @@ class Solution:
             
             left_height,left_balance = dfs_post_order(root.left)
             right_height,right_balance = dfs_post_order(root.right)
-            return (1+max(left_height,right_height),left_balance and right_balance and abs(left_height-right_height) <= 1)
+            balanced = left_balance and right_balance and abs(left_height-right_height) <= 1
+            node_height = 1+max(left_height,right_height)
+            return [node_height,balanced]
         return dfs_post_order(root)[1]
             
