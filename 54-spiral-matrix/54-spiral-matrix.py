@@ -15,7 +15,7 @@ class Solution:
             # move the right towards left by 1
             right -=1
             # for single row or single column matrix
-            if not(left < right and top < bottom):
+            if left >= right or top >= bottom:
                 break
             # getting all elements from right to left for bottom most row
             for i in range(right-1,left-1,-1):
