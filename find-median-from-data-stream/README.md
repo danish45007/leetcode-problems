@@ -1,3 +1,4 @@
+[Discussion Post (created on 29/3/2022 at 1:14)](https://leetcode.com/problems/find-median-from-data-stream/discuss/1990020/python-solution-using-two-heaps)  
 <h2>295. Find Median from Data Stream</h2><h3>Hard</h3><hr><div><p>The <strong>median</strong> is the middle value in an ordered integer list. If the size of the list is even, there is no middle value and the median is the mean of the two middle values.</p>
 
 <ul>
