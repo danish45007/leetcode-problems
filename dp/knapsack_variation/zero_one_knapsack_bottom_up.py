@@ -21,3 +21,17 @@ if __name__ == "__main__":
     W=50
     n=len(wt)
     print(zero_one_knapsack_bottom_up(wt,val,W,n))
+
+    """
+    stack = []
+        res = []
+        curr = root
+        while curr or stack:
+            while curr:
+                stack.append(curr)
+                curr = curr.left
+            curr = stack.pop()
+            res.append(curr.val)
+            curr = curr.right
+        return res
+    """
