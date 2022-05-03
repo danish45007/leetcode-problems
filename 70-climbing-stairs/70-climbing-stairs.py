@@ -10,6 +10,7 @@ class Solution:
                 return 2
             if n in dp:
                 return dp[n]
-            dp[n] = helper(n-2)+helper(n-1)
-            return dp[n]
+            steps = helper(n-2)+helper(n-1)
+            dp[n] = steps
+            return steps
         return helper(n)
