@@ -10,7 +10,6 @@ class Solution:
             
             res = dfs(index+1,curr_sum+arr[index]) + dfs(index+1,curr_sum-arr[index])
             dp[(index,curr_sum)] = res
-            
-            return dp[(index,curr_sum)]
+            return res
         return dfs(0,0)
                 
