@@ -9,6 +9,7 @@ class Solution:
         '''
         def backtrack(i,prev,curr,value,s):
             if i == n:
+                # curr == 0 to enusure no tailing number
                 if value == target and curr == 0:
                     res.append(s)
                 return
