@@ -6,7 +6,6 @@ class Solution:
             num_index_map[num] = i
         for i,n in enumerate(nums2):
             if n in num_index_map:
-                curr_index = i
                 while i < len(nums2)-1:
                     # nearest max
                     if nums2[i+1] > n:
