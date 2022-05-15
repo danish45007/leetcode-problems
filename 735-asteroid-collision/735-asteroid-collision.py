@@ -12,7 +12,7 @@ class Solution:
                 elif collision == 0:
                     stack.pop()
                     asteroid = 0
-            if asteroid:
+            if asteroid != 0:
                 stack.append(asteroid)
         return stack
                     
