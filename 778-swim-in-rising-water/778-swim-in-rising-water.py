@@ -20,7 +20,7 @@ class Solution:
                 # in bound check for new row and col
                 if(neighbour_row < 0 or neighbour_col < 0 or neighbour_row == N or neighbour_col == N or (neighbour_row,neighbour_col) in visited):
                     continue
-                # making sure keeping the max height(potential height) with path
+                # making sure keeping the max height(potential min. height) within path
                 new_min_height = max(height,grid[neighbour_row][neighbour_col])
                 heapq.heappush(min_heap,[new_min_height,neighbour_row,neighbour_col])
                 visited.add((neighbour_row,neighbour_col))
