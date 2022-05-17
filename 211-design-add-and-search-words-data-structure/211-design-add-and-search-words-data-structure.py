@@ -18,13 +18,16 @@ class WordDictionary:
         curr.is_end = True
 
     def search(self, word: str) -> bool:
-        def dfs(j,root):
+        # bracktrack
+        #apply dfs along all node when its the wildcard char '.'
+        def dfs(start_index,root):
             curr = root
-            for i in range(j,len(word)):
+            for i in range(start_index,len(word)):
                 char = word[i]
                 if char == '.':
-                    for child in curr.children.values():
-                        if dfs(i+1,child):
+                    # get all the node at the level where level is just the indexof(word['.']) for curr
+                    for child_node in curr.children.values():
+                        if dfs(i+1,child_node):
                             return True
                     return False
                 else:
@@ -32,7 +35,7 @@ class WordDictionary:
                         return False
                     curr = curr.children[char]
             return curr.is_end
-        
+    
         return dfs(0,self.root)
 
 
