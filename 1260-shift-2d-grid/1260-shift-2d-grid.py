@@ -1,11 +1,11 @@
 class Solution:
     def shiftGrid(self, grid: List[List[int]], k: int) -> List[List[int]]:
-        m, n = len(grid), len(grid[0])
-        ans = [[0]*n for i in range(m)]
-        for r in range(m):
-            for c in range(n):
-                one=((r*n +c)+k)%(m*n)
-                new_r,new_j=one//n, one%n
-                ans[new_r][new_j]=grid[r][c]
-        return ans
+        ROW, COL = len(grid), len(grid[0])
+        res = [[0]*COL for i in range(ROW)]
+        for r in range(ROW):
+            for c in range(COL):
+                new_index=((r*COL +c)+k)%(ROW*COL)
+                new_r,new_j=new_index//COL, new_index%COL
+                res[new_r][new_j]=grid[r][c]
+        return res
             
