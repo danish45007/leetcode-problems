@@ -39,5 +39,5 @@ class Solution:
         for num in nums:
             if count == 0:
                 res = num
-            count += (1 if res == num else -1)
+            count += (1 if num == res else -1)
         return res
