@@ -1,5 +1,6 @@
 class Solution:
     def isPerfectSquare(self, num: int) -> bool:
+        
         # brute force O(sqrt(n))
         # for i in range(1,num+1):
         #     if i*i == num:
@@ -7,6 +8,7 @@ class Solution:
         #     # return False immediately
         #     if i*i > num:
         #         return False
+        
         # binary search logn solution
         start = 1
         end = num
