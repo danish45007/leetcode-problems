@@ -1,5 +1,9 @@
 class Solution:
     def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:
+        '''
+            Time: O(E+V)
+            Space: O(V)
+        '''
         safe = {}
         res = []
         n = len(graph)
