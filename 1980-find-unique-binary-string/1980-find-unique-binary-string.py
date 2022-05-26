@@ -19,4 +19,4 @@ class Solution:
             if backtrack(i+1,curr): 
                 return backtrack(i+1,curr)
         
-        return backtrack(0,["0" for s in num])
+        return backtrack(0,["0"]*len(nums))
