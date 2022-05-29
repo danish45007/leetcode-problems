@@ -1,5 +1,9 @@
 class Solution:
     def assignTasks(self, servers: List[int], tasks: List[int]) -> List[int]:
+        '''
+         Time: O(mlogn) where m is the size of tasks and n size of servers
+         Space: O(n)
+        '''
         available_heap = [] #[weight,index]
         unavailable_heap = [] #[free_time,weight,index]
         for idx,wt in enumerate(servers):
