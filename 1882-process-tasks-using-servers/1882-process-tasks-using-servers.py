@@ -11,6 +11,7 @@ class Solution:
             time = max(i,time)
             # if the available_heap is empty
             if len(available_heap) == 0:
+                #advance the the curr time to the free time
                 time = unavailable_heap[0][0]
             while unavailable_heap and unavailable_heap[0][0] <= time:
                 # can push the unavailable task into available_heap
