@@ -4,8 +4,10 @@ class Solution:
         N = len(cells)
         memo = {}
         while n:
+            # if curr cell state already found
             if str(cells) in memo:
-                n %= memo[str(cells)] - n
+                # for n this pattern will followed
+                n = n % (memo[str(cells)] - n)
             memo[str(cells)] = n
             if n > 0:
                 temp_cells = [0]*N
