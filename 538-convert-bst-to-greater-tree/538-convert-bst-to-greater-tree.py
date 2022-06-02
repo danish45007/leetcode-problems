@@ -9,17 +9,15 @@ class Solution:
         curr_sum = 0
         def dfs(node):
             nonlocal curr_sum
-            # reverse inorder right -> root -> left
             if not node:
-                return 
-            #apply dfs on right sub tree
+                return
+            # opposite of in-order traversal R -> root -> left
             dfs(node.right)
-            # right most left node
             temp_node_val = node.val
             node.val += curr_sum
             curr_sum += temp_node_val
-            #on left sub tree
             dfs(node.left)
-        dfs(root)
-        return root
+            return node
+        return dfs(root)
+            
             
