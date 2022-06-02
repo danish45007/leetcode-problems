@@ -1,7 +1,7 @@
 class Solution:
     def hasAllCodes(self, s: str, k: int) -> bool:
         '''
-            Time:O(n)
+            Time:O(n*k)
             Space:O(2^k)
         '''
         unique_code_set = set()
