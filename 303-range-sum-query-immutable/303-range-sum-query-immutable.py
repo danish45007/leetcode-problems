@@ -7,7 +7,6 @@ class NumArray:
         for i in range(len(nums)):
             pref_sum += nums[i]
             self.pref_sum_matrix[i] = pref_sum
-        print(self.pref_sum_matrix)
 
     def sumRange(self, left: int, right: int) -> int:
         return self.pref_sum_matrix[right]-self.pref_sum_matrix[left]+self.nums[left]
