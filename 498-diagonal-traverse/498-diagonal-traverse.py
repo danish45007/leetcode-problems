@@ -34,6 +34,7 @@ class Solution:
                 # curr_row and curr_col out of bound
                 
                 # in case along the longest diagonal
+                # row out of bound
                 if curr_row == row:
                     curr_col +=2
                     curr_row -=1
