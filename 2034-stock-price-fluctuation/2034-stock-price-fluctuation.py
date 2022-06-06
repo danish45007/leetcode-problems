@@ -18,7 +18,7 @@ class StockPrice:
 
     def maximum(self) -> int:
         curr_price,timestamp = heapq.heappop(self.max_price)
-        while -1*curr_price > self.time_price_map[timestamp]:
+        while -1*curr_price != self.time_price_map[timestamp]:
             curr_price,timestamp = heapq.heappop(self.max_price)
         heapq.heappush(self.max_price,(curr_price,timestamp))
         return -1*curr_price
@@ -27,7 +27,7 @@ class StockPrice:
 
     def minimum(self) -> int:
         curr_price,timestamp = heapq.heappop(self.min_price)
-        while curr_price < self.time_price_map[timestamp]:
+        while curr_price != self.time_price_map[timestamp]:
             curr_price,timestamp = heapq.heappop(self.min_price)
         heapq.heappush(self.min_price,(curr_price,timestamp))
         return curr_price
