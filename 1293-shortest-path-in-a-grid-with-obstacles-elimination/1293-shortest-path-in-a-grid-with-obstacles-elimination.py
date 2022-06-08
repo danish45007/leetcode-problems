@@ -15,7 +15,7 @@ class Solution:
             for x_inc,y_inc in directions:
                 new_x,new_y = x+x_inc,y+y_inc
                 # checking the boundary condition
-                if  new_x < 0 or new_x == ROWS or new_y < 0 or new_y == COLS:
+                if  new_x < 0 or new_x == ROWS or new_y < 0 or new_y == COLS or (new_x,new_y,k_remaining) in visited:
                     continue
                 new_remaining = k_remaining - grid[new_x][new_y]
                 if new_remaining >= 0 and (new_x,new_y,new_remaining) not in visited:
