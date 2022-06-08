@@ -30,10 +30,10 @@ class Solution:
         result_from_first_half = binary_search(start,pivot-1,nums,target)
         result_from_second_half = binary_search(pivot,end,nums,target)
         if(result_from_first_half > -1):
-                   return result_from_first_half
+                return result_from_first_half
         elif(result_from_second_half > -1):
-                   return result_from_second_half
+                return result_from_second_half
         else:
-                   return -1
+                return -1
                 
         
