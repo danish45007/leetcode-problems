@@ -20,5 +20,4 @@ class Solution:
                     if new_remaining >= 0 and (new_x,new_y,new_remaining) not in visited:
                         visited.add((new_x,new_y,new_remaining))
                         queue.append((new_x,new_y,curr_len+1,new_remaining))
-
         return -1
