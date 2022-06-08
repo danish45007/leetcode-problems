@@ -15,9 +15,10 @@ class Solution:
             for x_inc,y_inc in directions:
                 new_x,new_y = x+x_inc,y+y_inc
                 # checking the boundary condition
-                if  ROWS > new_x >= 0 and  COLS > new_y >= 0:
-                    new_remaining = k_remaining - grid[new_x][new_y]
-                    if new_remaining >= 0 and (new_x,new_y,new_remaining) not in visited:
-                        visited.add((new_x,new_y,new_remaining))
-                        queue.append((new_x,new_y,curr_len+1,new_remaining))
+                if  new_x < 0 or new_x == ROWS or new_y < 0 or new_y == COLS:
+                    continue
+                new_remaining = k_remaining - grid[new_x][new_y]
+                if new_remaining >= 0 and (new_x,new_y,new_remaining) not in visited:
+                    visited.add((new_x,new_y,new_remaining))
+                    queue.append((new_x,new_y,curr_len+1,new_remaining))
         return -1
