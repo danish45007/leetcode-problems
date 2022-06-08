@@ -1,5 +1,7 @@
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
+        # digit to char map
+        # constant space
         digit_to_char = {
             "2": "abc",
             "3": "def",
@@ -10,14 +12,13 @@ class Solution:
             "8": "tuv",
             "9": 'wxyz'
         }
-        
-        res = []
-        def back_track(i,curr_string):
-            if len(curr_string) == len(digits):
-                res.append(curr_string)
+        result = []
+        def dfs(curr_digit_index,comb):
+            if curr_digit_index == len(digits):
+                result.append(comb)
                 return
-            for char in digit_to_char[digits[i]]:
-                back_track(i+1,curr_string+char)
+            for char in digit_to_char[digits[curr_digit_index]]:
+                dfs(curr_digit_index+1,comb+char)
         if digits:
-            back_track(0,"")
-        return res
+            dfs(0,'')
+        return result

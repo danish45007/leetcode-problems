@@ -6,17 +6,17 @@
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         dummy_node = ListNode()
-        curr = dummy_node
+        curr_node = dummy_node
         carry = 0
         while l1 or l2 or carry:
-            v1 = l1.val if l1 else 0
-            v2 = l2.val if l2 else 0
-            _sum = v1 + v2 + carry
+            val1 = l1.val if l1 else 0
+            val2 = l2.val if l2 else 0
+            _sum = val1 + val2 + carry
             root_val = _sum % 10
             carry = _sum // 10
-            curr.next = ListNode(root_val)            
-            #update pointers
-            curr = curr.next
+            curr_node.next = ListNode(root_val)
+            curr_node = curr_node.next
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
         return dummy_node.next
+            
