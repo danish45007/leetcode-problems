@@ -20,6 +20,5 @@ class Solution:
                 left_diagonal_set.remove(r+c)
                 right_diagonal_set.remove(r-c)
                 
-        
         backtrack(0)
         return res
