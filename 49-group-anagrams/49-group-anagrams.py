@@ -6,4 +6,5 @@ class Solution:
             for char in s:
                 count[ord(char)-ord("a")] += 1
             res[tuple(count)].append(s)
+            
         return res.values()
