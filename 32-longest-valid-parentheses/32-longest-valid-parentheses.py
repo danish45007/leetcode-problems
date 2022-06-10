@@ -36,9 +36,9 @@ class Solution:
                 start -=1
             return max_size
         
-        from_left = (check_longest_from_left_to_right(0,len(s)-1))
-        from_right = (check_longest_from_right_to_left(len(s)-1,0))
-        return max(from_left,from_right)
+        max_from_left = (check_longest_from_left_to_right(0,len(s)-1))
+        max_from_right = (check_longest_from_right_to_left(len(s)-1,0))
+        return max(max_from_left,max_from_right)
         
             
             
