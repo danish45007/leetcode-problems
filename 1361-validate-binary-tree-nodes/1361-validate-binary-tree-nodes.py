@@ -37,6 +37,7 @@ class Solution:
         visited = set()
         queue = deque()
         queue.append(root_node)
+        # check if the tree does not form a cycle
         while queue:
             curr_node = queue.popleft()
             visited.add(curr_node)
