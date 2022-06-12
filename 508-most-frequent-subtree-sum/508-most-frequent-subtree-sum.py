@@ -12,7 +12,7 @@ class Solution:
             nonlocal max_freq_count
             if not node:
                 return 0
-            # post order left, root, right
+            # post order left, right, root
             left_sum = dfs(node.left)
             right_sum = dfs(node.right)
             curr_sum = left_sum + node.val + right_sum
