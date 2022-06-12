@@ -14,9 +14,9 @@ class Solution:
             visited.add((r,c))
             for row,col in directions:
                 dfs(r+row,c+col)
-        
         # apply bfs to find the shortest path b/w islands (2 1's)
         def bfs():
+            
             # added the (r,c) for 1st island into queue and applying bfs over there to find the min no of level to find the 2nd
             # island
             queue = deque(visited)
