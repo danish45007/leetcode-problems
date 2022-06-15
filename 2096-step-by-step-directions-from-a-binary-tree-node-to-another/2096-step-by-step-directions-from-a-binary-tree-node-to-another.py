@@ -8,8 +8,6 @@ class Solution:
     def getDirections(self, root: Optional[TreeNode], startValue: int, destValue: int) -> str:
         graph = defaultdict(list)
         def dfs(node):
-            # if not node:
-            #     return
             if node.left:
                 graph[node.val].append((node.left.val,'L'))
                 graph[node.left.val].append((node.val,'U'))
