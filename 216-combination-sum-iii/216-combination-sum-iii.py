@@ -5,7 +5,7 @@ class Solution:
         candidates = [i for i in range(1,10)]
         def dfs(i,curr,total):
             # target case
-            if total == target and len(set(curr)) == len(curr) == k:
+            if total == target and len(set(curr)) == len(curr) and len(set(curr)) == k:
                 res.append(curr.copy())
                 return
             # out of bound base
