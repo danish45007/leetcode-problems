@@ -7,7 +7,6 @@ class Solution:
             w1,w2 = words[i],words[i+1]
             if not self.check_two_words_in_order(w1,w2):
                 return False
-                break
         return True
     
     def check_two_words_in_order(self,word1,word2):
