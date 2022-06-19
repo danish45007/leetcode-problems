@@ -10,10 +10,16 @@ class Solution:
         return True
     
     def check_two_words_in_order(self,word1,word2):
-        if (len(word1) > len(word2) and word1.find(word2) != -1): return False
-        for i in range(min(len(word1),len(word2))):
-            if(word1[i] != word2[i]):
-                if(self.char_order[word1[i]] > self.char_order[word2[i]]): return False
-                if(self.char_order[word1[i]] < self.char_order[word2[i]]): return True
+        for i in range(len(word1)):
+            # word2 is pref of word1
+            if i == len(word2):
+                return False
+            
+            # check for the diff char in word1 and word2
+            if word1[i] != word2[i]:
+                # check if the order word1[i] comes bofore order of word2[i]
+                if self.char_order[word1[i]] > self.char_order[word2[i]]:
+                    return False
+                break
         return True
                 
