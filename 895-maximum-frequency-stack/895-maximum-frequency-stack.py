@@ -1,7 +1,7 @@
 class FreqStack:
 
     def __init__(self):
-        self.freq_count = {}  #{freq: val}
+        self.freq_count = {}  #{val: freq}
         self.stacks = {} #{freq: [values]}
         self.max_count = 0
 
