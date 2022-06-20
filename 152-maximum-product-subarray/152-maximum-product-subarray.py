@@ -4,7 +4,7 @@ class Solution:
         curr_max,curr_min = 1,1
         for n in nums:
             tem_max = n*curr_max
-            curr_max = max(n*curr_max,n*curr_min,n)
+            curr_max = max(tem_max,n*curr_min,n)
             curr_min = min(tem_max,n*curr_min,n)
 
             res = max(res,curr_max)
