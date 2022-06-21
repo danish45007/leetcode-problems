@@ -1,5 +1,9 @@
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
+        '''
+            Time: O(log(max(N)*N)) where N is size of piles
+            Space: O(1)
+        '''
         speed_min,speed_max = 1,max(piles)
         res = speed_max
         def can_koko_eat_in_time(speed):
