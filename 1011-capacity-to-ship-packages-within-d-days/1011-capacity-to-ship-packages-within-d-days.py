@@ -7,21 +7,18 @@ class Solution:
         res = -1        
         while start <= end:
             mid = start + (end-start) // 2
-            if(self.isValid(weights,mid,days)):
+            if(self.can_ship_in_d_days(weights,mid,days)):
                 res = mid
                 end = mid - 1
             else:
                 start = mid + 1
         return res
-    def isValid(self,arr,_max,days):
-        day = 1
-        _sum = 0
-        for i in range(len(arr)):
-            _sum = _sum + arr[i]
-            if(_sum > _max):
-                day +=1
-                _sum = arr[i]
-        if(day > days):
-            return False
-        else:
-            return True
+    def can_ship_in_d_days(self,weights,max_weight,days_have):
+        days_taken = 1
+        curr_wright = 0
+        for weight in weights:
+            curr_wright += weight
+            if(curr_wright > max_weight):
+                days_taken += 1
+                curr_wright = weight
+        return days_taken <= days_have
