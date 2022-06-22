@@ -26,7 +26,7 @@ class Solution:
         if max_heap:
             char_count,char = heapq.heappop(max_heap)
             # not a valid case to add into result
-            if -char_count > 1 or res[-1] == char:
+            if -1*char_count > 1 or res[-1] == char:
                 return ''
             res.append(char)
         return ''.join(res)
