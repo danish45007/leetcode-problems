@@ -72,4 +72,4 @@ def solve(ribbons,k):
 
 
 if __name__ == "__main__":
-    print(solve([7,5,9],4))
+    print(solve([5,7,9],22))
