@@ -5,6 +5,7 @@ class Solution:
         # sort in reverse order
         cars.sort(reverse=True,key=lambda x:x[0])
         stack = []
+    
         for pos,spe in cars:
             stack.append((target-pos)/spe)
             if len(stack) >= 2 and stack[-1] <= stack[-2]:
