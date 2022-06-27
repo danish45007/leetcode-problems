@@ -8,7 +8,6 @@ class Solution:
                     queue.append(stack.pop())
                 # remove the opening bracket
                 stack.pop()
-                
                 # add the element back into stack from queue
                 while queue:
                     stack.append(queue.popleft())
