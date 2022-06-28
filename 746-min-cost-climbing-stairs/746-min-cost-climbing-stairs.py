@@ -12,6 +12,6 @@ class Solution:
             two_step_cost = helper(n-2)+cost[n]
             min_cost = min(one_step_cost,two_step_cost)
             dp[n] = min_cost
-            return dp[n]
+            return min_cost
         return min(helper(len(cost)-1),helper(len(cost)-2))
 
