@@ -21,7 +21,6 @@ class Solution:
         
         
         def get_next_palindrome(num):
-            print(num)
             if is_valid_prime(num+1) and is_valid_palindrome(num+1):
                 return num+1
             num_str = list(str(num))
