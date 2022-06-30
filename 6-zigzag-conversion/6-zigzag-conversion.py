@@ -10,6 +10,5 @@ class Solution:
                 res += s[i]
                 if(row > 0 and row < numRows-1 and  i+increment-2*row < len(s)):
                     # getting the intermedate char
-                    print(s[i+increment-2*row],row)
                     res += s[i+increment-2*row]
         return res
