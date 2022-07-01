@@ -12,6 +12,8 @@ class Solution:
             last_index = last_index_map[char]
             size += 1
             end = max(end,last_index)
+            # reached the end of the Partition where all the elements(indexs) are within end (<= end)
+            # now we can create a new Partition
             if index == end:
                 result.append(size)
                 size = 0
