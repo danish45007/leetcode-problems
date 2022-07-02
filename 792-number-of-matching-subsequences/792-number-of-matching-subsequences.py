@@ -20,8 +20,9 @@ class Solution:
             prev_index = -1
             found = True
             for char in word:
-                if binary_search(char_index_map[char],prev_index) >= 0:
-                    prev_index = char_index_map[char][binary_search(char_index_map[char],prev_index)]
+                new_high_index = binary_search(char_index_map[char],prev_index)
+                if new_high_index >= 0:
+                    prev_index = char_index_map[char][new_high_index]
                 else:
                     found = False
                     break
