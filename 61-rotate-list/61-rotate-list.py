@@ -20,10 +20,10 @@ class Solution:
             return head
         
         # breaking the linked list at the pivot(length-k-1) and pointer the node before pivot to None(tail)
-        curr_head = head
+        pivot = head
         for i in range(length-k-1):
-            curr_head = curr_head.next
-        new_head = curr_head.next
-        curr_head.next = None
+            pivot = pivot.next
+        new_head = pivot.next
+        pivot.next = None
         tail.next = head
         return new_head
