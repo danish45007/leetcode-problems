@@ -1,5 +1,6 @@
 class Solution:
     def findPeakElement(self, nums: List[int]) -> int:
+        # edge case
         if(len(nums) == 1):
             return 0
         start = 0
