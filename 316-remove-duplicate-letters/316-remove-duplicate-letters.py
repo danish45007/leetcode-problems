@@ -11,7 +11,7 @@ class Solution:
             freq_count[char] -=1
             if char in seen_char:
                 continue
-            # check if the top of the stack has bigger char and freq of top is greater than 0
+            # check if the top of the stack has bigger char and freq of top is greater tha
             # pop from stack and remove from seen
             while stack and ord(stack[-1])-ord(char) > 0 and freq_count[stack[-1]] > 0:
                 c = stack.pop()
