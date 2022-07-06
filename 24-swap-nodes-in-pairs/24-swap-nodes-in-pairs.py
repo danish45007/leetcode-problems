@@ -16,8 +16,8 @@ class Solution:
             # it will be new head now so dummy.next will point to second
             # curr is the first node in the pair and after swap it will become the the second so new second will point the curr
             second = curr.next
-            second.next = curr
             prev.next = second
+            second.next = curr
             curr.next = next_pair
             # update pointers
             prev = curr
