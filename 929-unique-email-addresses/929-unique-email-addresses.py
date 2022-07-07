@@ -5,11 +5,11 @@ class Solution:
             local,domain = email.split("@")
             space = []
             for char in local:
+                # filter out local
                 if char == '.': continue
                 if char == '+': break
                 space.append(char)
             uqiue_email_set.add("".join(space) + '@' + domain)
-            
         return len(uqiue_email_set)
         
             
