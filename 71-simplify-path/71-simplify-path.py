@@ -4,7 +4,7 @@ class Solution:
         # split the path by '/'
         path = path.split("/")
         for p in path:
-            # pop out recently add filename from stack pop out the top
+            # pop out recently add filename from stack by popping out the top
             if stack and p == "..":
                 stack.pop()
             # add filename only into stack 
