@@ -10,17 +10,19 @@ class Solution:
         #             break
         # return dp[0]
         queue = deque([s])
+        def startswith_method(word,start_word):
+            return word[:len(start_word)] == start_word
         visited = set()
         while queue:
             word = queue.popleft()
             if word in visited:
                 continue
             else:
-                if word == '':
+                if not word:
                     return True
                 visited.add(word)
                 for start_word in wordDict:
-                    if word.startswith(start_word):
+                    if startswith_method(word,start_word):
                         queue.append(word[len(start_word):])
         return False
                     
