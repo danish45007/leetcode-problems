@@ -9,7 +9,7 @@ class Solution:
             return r < 0 or c < 0 or r == N or c == N
         # apply dfs to get one of the island
         def dfs(r,c):
-            if row_col_invalid(r,c) or not grid[r][c] or (r,c) in visited:
+            if row_col_invalid(r,c) or grid[r][c] == 0 or (r,c) in visited:
                 return
             visited.add((r,c))
             for row,col in directions:

@@ -4,7 +4,7 @@ class Solution:
         longest = 0
         for n in nums:
             # to find the start of the sequence
-            # if the n-1 of n doesn't exists mean thats the start of the sequence
+            # if the n-1 of n doesn't exists means its a start of sequence
             if n-1 not in num_set:
                 # length is the largest size of the ongoing sequence
                 length = 0
