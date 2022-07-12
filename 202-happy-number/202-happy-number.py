@@ -12,8 +12,8 @@ class Solution:
         output = 0
         while n:
             dig = n%10
-            dig = dig**2
-            output += dig
+            square = dig**2
+            output += square
             n = n//10
         return output
             
