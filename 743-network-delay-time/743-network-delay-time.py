@@ -4,14 +4,13 @@ class Solution:
         
         for u,v,w in times:
             adjList[u].append((v,w))
-            
+        print(adjList)     
         time = 0
         minHeap = [(0,k)]
         visit = set()
         
         while minHeap and len(visit) < n:
             w1,n1 = heapq.heappop(minHeap)
-            
             visit.add(n1)
             time = max(time, w1)
             
