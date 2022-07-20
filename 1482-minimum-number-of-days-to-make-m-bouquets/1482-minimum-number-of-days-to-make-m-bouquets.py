@@ -18,8 +18,8 @@ class Solution:
                 if total_flowers_streak >= k:
                     total_bouquets+=1
                     total_flowers_streak = 0
-            # if total_flowers_streak >= k:
-            #     total_bouquets+=1
+            if total_flowers_streak >= k:
+                total_bouquets+=1
             return total_bouquets >= m
         while start <= end:
             mid = (start+end) // 2
