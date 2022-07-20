@@ -13,5 +13,5 @@ class Solution:
             carry = total // 2
         res = res[::-1]    
         if carry:
-            res = "1" + res
+            res = str(carry) + res
         return res
