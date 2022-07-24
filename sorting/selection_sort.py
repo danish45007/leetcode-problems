@@ -6,7 +6,7 @@ def solve(nums):
                 min_value = nums[j]
         
         min_value_index = nums.index(min_value,i)
-        if nums[i] != nums[min_value_index]:
+        if nums[i] > nums[min_value_index]:
             nums[i],nums[min_value_index] = nums[min_value_index],nums[i]
     return nums
 

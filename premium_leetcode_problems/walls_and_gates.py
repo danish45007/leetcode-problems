@@ -67,7 +67,7 @@ class Solution:
             queue.append((r,c))
             visited.add((r,c))
 
-        # when starting from the gates the inital distance is 0
+        # when starting from the gates the initial distance is 0
         distance = 0
         while queue:
             queue_len = len(queue)

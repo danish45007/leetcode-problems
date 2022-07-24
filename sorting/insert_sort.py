@@ -7,7 +7,7 @@ def solve(nums):
         sorted_index = i
         # check with sorted list
         while nums[sorted_index-1] > unsorted_element and sorted_index > 0:
-            nums[sorted_index] = nums[sorted_index-1]
+            nums[sorted_index-1] = nums[sorted_index]
             sorted_index -=1
         nums[sorted_index] = unsorted_element
     return nums
