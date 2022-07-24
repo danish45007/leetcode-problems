@@ -6,6 +6,47 @@
 #         self.right = right
 class Solution:
     def maxPathSum(self, root: Optional[TreeNode]) -> int:
+        max_path_sum = root.val
+        def dfs(node):
+            nonlocal max_path_sum
+            if not node:
+                return 0
+            left_node = dfs(node.left)
+            right_node = dfs(node.right)
+            left_val = max(left_node,0)
+            right_val = max(right_node,0)
+            max_path_sum_with_split = node.val + left_val + right_val
+            max_path_sum = max(max_path_sum,max_path_sum_with_split)
+            return node.val + max(left_val,right_val)
+        dfs(root)
+        return max_path_sum
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         # max path sum with split
         max_path_sum = root.val
         # this will return the path sum without split
