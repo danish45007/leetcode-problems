@@ -3,7 +3,7 @@ class Solution:
         stack = []
         response = []
         def back_track(open_count,close_count):
-            if open_count == close_count == n:
+            if open_count == n and close_count == n:
                 response.append("".join(stack))
                 return
             
